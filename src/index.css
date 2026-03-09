@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 11% 97%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    --primary: 204 100% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 182 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 11% 95%;
+    --muted-foreground: 210 7% 46%;
+
+    --accent: 204 38% 28%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 204 100% 29%;
+
+    --radius: 0.5rem;
+
+    /* Custom VRIF tokens */
+    --vrif-dark: 200 100% 11%;
+    --gradient-hero: linear-gradient(135deg, hsl(200 100% 11%), hsl(204 38% 28%));
+    --gradient-accent: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
+    --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-card-hover: 0 15px 30px rgba(0, 0, 0, 0.2);
+    --font-family: 'Poppins', sans-serif;
+  }
+
+  .dark {
+    --background: 200 100% 11%;
+    --foreground: 0 0% 96%;
+    --card: 204 38% 18%;
+    --card-foreground: 0 0% 96%;
+    --popover: 204 38% 18%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 182 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 204 100% 29%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 204 38% 20%;
+    --muted-foreground: 210 7% 65%;
+    --accent: 204 38% 28%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 204 38% 25%;
+    --input: 204 38% 25%;
+    --ring: 182 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent-bar {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-vrif-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-vrif-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
